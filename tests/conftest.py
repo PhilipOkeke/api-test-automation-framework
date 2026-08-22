@@ -2,6 +2,7 @@
 
 from collections.abc import Callable, Generator
 from typing import Any
+from uuid import uuid4
 
 import pytest
 import requests
@@ -19,7 +20,11 @@ def settings() -> Settings:
 
 @pytest.fixture(scope="session")
 def api_client(settings: Settings) -> Generator[TaskFlowClient, None, None]:
+    email = f"api-tests-{uuid4().hex}@example.com"
+    password = "AutomationTest123!"
     with TaskFlowClient(settings) as client:
+        assert_status(client.register(email, password, "API Test User"), 201)
+        assert_status(client.login(email, password), 200)
         yield client
 
 
