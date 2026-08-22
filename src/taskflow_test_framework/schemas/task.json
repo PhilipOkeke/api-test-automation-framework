@@ -16,6 +16,78 @@
   "properties": {
     "id": {"type": "integer", "minimum": 1},
     "title": {"type": "string", "minLength": 3, "maxLength": 120},
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "owner_id",
+    "title",
+    "description",
+    "status",
+    "priority",
+    "due_date",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "owner_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 120
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1000
+    },
+    "status": {
+      "enum": [
+        "todo",
+        "in_progress",
+        "done"
+      ]
+    },
+    "priority": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "due_date": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
     "description": {"type": ["string", "null"], "maxLength": 1000},
     "status": {"enum": ["todo", "in_progress", "done"]},
     "priority": {"enum": ["low", "medium", "high"]},
