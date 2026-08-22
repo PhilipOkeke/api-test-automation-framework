@@ -6,6 +6,18 @@
 
 A reusable black-box API testing framework built with Python and PyTest. It tests the [TaskFlow REST API](https://github.com/philip-okeke/taskflow-api) through real HTTP requests, validates response contracts, covers complete CRUD workflows, and publishes test reports in CI.
 
+
+## Architecture
+
+```mermaid
+flowchart LR
+    Tests[PyTest Suites] --> Client[Requests Client]
+    Client --> API[API Under Test]
+    API --> Schema[JSON Schema Validation]
+    Tests --> Reports[Coverage and Reports]
+    CI[GitHub Actions] --> Tests
+```
+
 This repository demonstrates both **QA automation** and **software development** skills: maintainable package design, clean abstractions, typed Python, test data management, environment configuration, and automated delivery checks.
 
 ## What this framework tests
