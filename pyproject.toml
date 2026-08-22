@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "taskflow-api-test-framework"
+version = "1.0.0"
+description = "A reusable API test automation framework for the TaskFlow REST API."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+  { name = "Philip Okeke", email = "Engr.philipokeke@gmail.com" },
+]
+dependencies = [
+  "jsonschema==4.26.0",
+  "requests==2.34.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.1.1",
+  "pytest-cov==7.1.0",
+  "pytest-html==4.2.0",
+  "ruff==0.16.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+taskflow_test_framework = ["schemas/*.json"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers --cov=taskflow_test_framework --cov-report=term-missing --cov-fail-under=90"
+testpaths = ["tests"]
+markers = [
+  "smoke: fast checks for critical API availability and core behavior",
+  "regression: broader functional coverage for the API",
+]
+
+[tool.coverage.run]
+branch = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
