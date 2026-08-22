@@ -1,0 +1,29 @@
+name: Bug report
+description: Report a reproducible problem in the API test framework
+title: '[Bug]: '
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve the framework. Do not include credentials or production data.
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem description
+      description: Explain what happened and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Include the command, endpoint type, and sanitized test data.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Python version, operating system, dependency versions
+    validations:
+      required: true
