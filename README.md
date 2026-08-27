@@ -1,10 +1,10 @@
 # API Test Automation Framework
 
-[![API Test Automation](https://github.com/philip-okeke/api-test-automation-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/philip-okeke/api-test-automation-framework/actions/workflows/ci.yml)
+[![API Test Automation](https://github.com/PhilipOkeke/api-testing-framework/actions/workflows/ci.yml/badge.svg)](https://github.com/PhilipOkeke/api-testing-framework/actions/workflows/ci.yml)
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![PyTest](https://img.shields.io/badge/tested%20with-PyTest-0A9EDC?logo=pytest&logoColor=white)](https://pytest.org/)
 
-A reusable black-box API testing framework built with Python and PyTest. It tests the [TaskFlow REST API](https://github.com/philip-okeke/taskflow-api) through real HTTP requests, validates response contracts, covers complete CRUD workflows, and publishes test reports in CI.
+A reusable black-box API testing framework built with Python and PyTest. It tests the [TaskFlow REST API](https://github.com/PhilipOkeke/taskflow-backend-api) through real HTTP requests, validates response contracts, covers complete CRUD workflows, and publishes test reports in CI.
 
 
 ## Architecture
@@ -151,7 +151,7 @@ The GitHub Actions workflow:
 ## Project structure
 
 ```text
-api-test-automation-framework/
+api-testing-framework/
 ├── .github/workflows/ci.yml
 ├── postman/
 │   ├── TaskFlow_API.postman_collection.json
@@ -181,5 +181,4 @@ Software Engineer | Backend Developer | QA Automation Engineer
 
 - Email: [Engr.philipokeke@gmail.com](mailto:Engr.philipokeke@gmail.com)
 - LinkedIn: [linkedin.com/in/philip-okeke-8148a42a4](https://www.linkedin.com/in/philip-okeke-8148a42a4)
-- GitHub: [github.com/philip-okeke](https://github.com/philip-okeke)
-
+- GitHub: [github.com/PhilipOkeke](https://github.com/PhilipOkeke)
